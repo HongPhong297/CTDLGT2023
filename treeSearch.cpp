@@ -38,7 +38,7 @@ void Inorder(Node* proot){
     }
 }
 // tim gia tri min benh phai = sat trai
-Node* minvalueNode(Node* proot){
+Node*  minvalueNode(Node* proot){
     Node* temp = proot;
     while (temp->left != nullptr){
         temp = temp->left;
@@ -88,7 +88,6 @@ void Menu(Node* &proot){
     printMenu();
     Init(proot);
     int ins,remv, choice;
-    Node* temp;
     while(true){
         cout << "Your Chose: ";
         cin >> choice;
@@ -101,8 +100,7 @@ void Menu(Node* &proot){
             case 2:
                 cout << "Input to remove: ";
                 cin >> remv;
-                temp = removeBST(proot,remv);
-                insertBST(proot,temp->info);
+                proot = removeBST(proot,remv);
                 break;
             case 3:
                 Inorder(proot);
